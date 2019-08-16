@@ -1,0 +1,43 @@
+// http response
+const HTTP_RESPONSE_OK = 200;
+const HTTP_RESPONSE_SERVER_ERROR = 500;
+const HTTP_RESPONSE_UNAUTHORIZED = 401;
+
+function _HTTP_RESPONSE_OK() {
+	return HTTP_RESPONSE_OK;
+}
+
+function _HTTP_RESPONSE_SERVER_ERROR() {
+	return HTTP_RESPONSE_SERVER_ERROR;
+}
+
+function _HTTP_RESPONSE_UNAUTHORIZED() {
+	return HTTP_RESPONSE_UNAUTHORIZED;
+}
+
+// API status
+const STATUS_SUCCESS = 'success';
+const STATUS_ERROR = 'error';
+const STATUS_WARNING = 'warning';
+
+function _STATUS_SUCCESS() {
+	return STATUS_SUCCESS;
+}
+
+function _STATUS_ERROR() {
+	return STATUS_ERROR;
+}
+
+function _STATUS_WARNING() {
+	return STATUS_WARNING;
+}
+
+module.exports = {
+	_HTTP_RESPONSE_OK,
+	_HTTP_RESPONSE_SERVER_ERROR,
+	_HTTP_RESPONSE_UNAUTHORIZED,
+
+	_STATUS_SUCCESS,
+	_STATUS_ERROR,
+	_STATUS_WARNING
+}

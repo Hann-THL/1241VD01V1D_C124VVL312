@@ -1,0 +1,39 @@
+
+Update 4D Result
+- URL: localhost:3000/api/4D/update-result
+- Type: POST
+
+
+
+4D Result
+- URL: localhost:3000/api/4D/result
+- Type: GET
+- Request Body:
+	{
+		"date": "2019-07-31"	// Optional
+	}
+	
+
+
+Number Occurrence
+- URL: localhost:3000/api/4D/number-occurrence
+- Type: GET
+- Request Body:
+	{
+		"dateFrom": "1985-04-25",			// Optional
+		"dateTo": "2019-07-31",				// Optional
+		"number": "0000",					// Optional
+		"orderBy": "total_occurrence",		// Optional
+		"sortOrder": "DESC"					// Optional
+	}
+
+
+
+Digit Occurrence
+- URL: localhost:3000/api/4D/digit-occurrence
+- Type: GET
+- Request Body:
+	{
+		"dateFrom": "1985-04-25",			// Optional
+		"dateTo": "2019-07-31"				// Optional
+	}

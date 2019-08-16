@@ -1,0 +1,55 @@
+// company
+const COMPANY_MAGNUM = 'MAG';
+const COMPANY_SPORTS_TOTO = 'ST';
+const COMPANY_DAMACAI = 'DMC';
+
+function _COMPANY_MAGNUM() {
+	return COMPANY_MAGNUM;
+}
+
+function _COMPANY_SPORTS_TOTO() {
+	return COMPANY_SPORTS_TOTO;
+}
+
+function _COMPANY_DAMACAI() {
+	return COMPANY_DAMACAI;
+}
+
+// category
+const CATEGORY_FIRST = 'FST';
+const CATEGORY_SECOND = 'SCD';
+const CATEGORY_THIRD = 'TRD';
+const CATEGORY_SPECIAL = 'SP';
+const CATEGORY_CONSOLATION = 'CONS';
+
+function _CATEGORY_FIRST() {
+	return CATEGORY_FIRST;
+}
+
+function _CATEGORY_SECOND() {
+	return CATEGORY_SECOND;
+}
+
+function _CATEGORY_THIRD() {
+	return CATEGORY_THIRD;
+}
+
+function _CATEGORY_SPECIAL() {
+	return CATEGORY_SPECIAL;
+}
+
+function _CATEGORY_CONSOLATION() {
+	return CATEGORY_CONSOLATION;
+}
+
+module.exports = {
+	_COMPANY_MAGNUM,
+	_COMPANY_SPORTS_TOTO,
+	_COMPANY_DAMACAI,
+
+	_CATEGORY_FIRST,
+	_CATEGORY_SECOND,
+	_CATEGORY_THIRD,
+	_CATEGORY_SPECIAL,
+	_CATEGORY_CONSOLATION
+}
