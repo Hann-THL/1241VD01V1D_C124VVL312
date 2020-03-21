@@ -70,6 +70,12 @@ const SELECT_LATEST_DATE = `
 	FROM result_4d r4d
 	\${WHERE_FILTER}
 `;
+const SELECT_ALL_DATE = `
+	SELECT DISTINCT draw_date, company_code
+	FROM result_4d r4d
+	\${WHERE_FILTER}
+	ORDER BY r4d.draw_date, r4d.company_code
+`;
 const SELECT_4D_RESULT = `
 	SELECT
 		r4d.company_code,
@@ -116,6 +122,10 @@ function _SELECT_LATEST_DATE() {
 	return commonUtils.formatQuery(SELECT_LATEST_DATE);
 }
 
+function _SELECT_ALL_DATE() {
+	return commonUtils.formatQuery(SELECT_ALL_DATE);
+}
+
 function _SELECT_4D_RESULT() {
 	return commonUtils.formatQuery(SELECT_4D_RESULT);
 }
@@ -143,6 +153,7 @@ module.exports = {
 
 	_SELECT,
 	_SELECT_LATEST_DATE,
+	_SELECT_ALL_DATE,
 	_SELECT_4D_RESULT,
 	_SELECT_4D_RESULT_FLAT,
 

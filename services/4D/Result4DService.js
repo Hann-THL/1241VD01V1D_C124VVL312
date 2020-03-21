@@ -220,8 +220,28 @@ async function get4DResultFlat({ dateFrom, dateTo }) {
 	}
 }
 
+async function getAllDates() {
+	var queryString = '';
+	var whereFilter = '';
+	var valueParams = {};
+	var result;
+
+	try {
+		queryString = result4DQuery._SELECT_ALL_DATE();
+		whereFilter = result4DQuery.filter(valueParams);
+		queryString = queryString.replace('${WHERE_FILTER}', whereFilter);
+
+		result = await dbService.getList(queryString, valueParams);
+		return result;
+
+	} catch (error) {
+		throw Error(error);
+	}
+}
+
 module.exports = {
 	update4DResult,
 	get4DResult,
-	get4DResultFlat
+	get4DResultFlat,
+	getAllDates
 }

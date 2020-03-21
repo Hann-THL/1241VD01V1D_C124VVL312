@@ -272,4 +272,24 @@ router.get('/result-flat', function(req, res) {
 	});
 });
 
+router.get('/all-dates', function(req, res) {
+	const errorSummary = 'Result4DController.js /all-dates';
+
+	result4DService.getAllDates()
+	.then((result) => {
+		var filename = `4D_dates.csv`;
+		var csv = parse(result, {
+			fields: ['draw_date', 'company_code'],
+			delimiter: ';'
+		});
+		FileSystem.writeFileSync(`./${filename}`, csv);
+
+		var json = { message: `Data successfully exported to ${filename}.` };
+		controllerHelper.handleSuccess(res, json);
+	})
+	.catch((error) => {
+		controllerHelper.handleError(res, error, errorSummary);
+	});
+});
+
 module.exports = router;
