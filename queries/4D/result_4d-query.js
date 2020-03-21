@@ -71,10 +71,12 @@ const SELECT_LATEST_DATE = `
 	\${WHERE_FILTER}
 `;
 const SELECT_ALL_DATE = `
-	SELECT DISTINCT draw_date, company_code
+	SELECT DISTINCT
+		TO_CHAR(r4d.draw_date, 'YYYY-MM-DD') AS draw_date,
+		company_code
 	FROM result_4d r4d
 	\${WHERE_FILTER}
-	ORDER BY r4d.draw_date, r4d.company_code
+	ORDER BY draw_date, r4d.company_code
 `;
 const SELECT_4D_RESULT = `
 	SELECT
